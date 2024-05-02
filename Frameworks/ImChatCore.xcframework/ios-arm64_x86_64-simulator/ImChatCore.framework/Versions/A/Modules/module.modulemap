@@ -1,0 +1,9 @@
+framework module "ImChatCore" {
+	header "ref.h"
+    header "Im_chat_sdk.objc.h"
+    header "Im_chat_sdk_callback.objc.h"
+    header "Universe.objc.h"
+    header "ImChatCore.h"
+
+    export *
+}
