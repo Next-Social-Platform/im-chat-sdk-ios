@@ -25,6 +25,8 @@
 
 - (id<Im_chat_sdk_callbackOnBatchMsgListener> _Nullable)batchMsgListener;
 - (id<Im_chat_sdk_callbackOnCustomBusinessListener> _Nullable)businessListener;
+// skipped method LoginMgr.Contact with unsupported parameter or return types
+
 // skipped method LoginMgr.Context with unsupported parameter or return types
 
 // skipped method LoginMgr.Conversation with unsupported parameter or return types
@@ -100,6 +102,9 @@ FOUNDATION_EXPORT void Im_chat_sdkAddBlack(id<Im_chat_sdk_callbackBase> _Nullabl
 
 FOUNDATION_EXPORT void Im_chat_sdkAddFriend(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable userIDReqMsg);
 
+// skipped function AddMessageReactionExtensions with unsupported parameter or return types
+
+
 /**
  * AddUserCommand add to user's favorite
  */
@@ -152,6 +157,8 @@ FOUNDATION_EXPORT NSString* _Nonnull Im_chat_sdkCreateMergerMessage(NSString* _N
 
 FOUNDATION_EXPORT NSString* _Nonnull Im_chat_sdkCreateQuoteMessage(NSString* _Nullable operationID, NSString* _Nullable text, NSString* _Nullable message);
 
+FOUNDATION_EXPORT NSString* _Nonnull Im_chat_sdkCreateReactionMessage(NSString* _Nullable operationID, NSString* _Nullable clientMsgID);
+
 FOUNDATION_EXPORT NSString* _Nonnull Im_chat_sdkCreateSoundMessage(NSString* _Nullable operationID, NSString* _Nullable soundPath, int64_t duration);
 
 FOUNDATION_EXPORT NSString* _Nonnull Im_chat_sdkCreateSoundMessageByURL(NSString* _Nullable operationID, NSString* _Nullable soundBaseInfo);
@@ -203,6 +210,8 @@ FOUNDATION_EXPORT void Im_chat_sdkGetAllUserCommands(id<Im_chat_sdk_callbackBase
 FOUNDATION_EXPORT NSString* _Nonnull Im_chat_sdkGetAtAllTag(NSString* _Nullable operationID);
 
 FOUNDATION_EXPORT void Im_chat_sdkGetBlackList(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID);
+
+FOUNDATION_EXPORT void Im_chat_sdkGetContactList(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID);
 
 FOUNDATION_EXPORT NSString* _Nonnull Im_chat_sdkGetConversationIDBySessionType(NSString* _Nullable operationID, NSString* _Nullable sourceID, long sessionType);
 
@@ -349,6 +358,8 @@ FOUNDATION_EXPORT void Im_chat_sdkSetAppBackgroundStatus(id<Im_chat_sdk_callback
 FOUNDATION_EXPORT void Im_chat_sdkSetAppBadge(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, int32_t appUnreadCount);
 
 FOUNDATION_EXPORT void Im_chat_sdkSetBatchMsgListener(id<Im_chat_sdk_callbackOnBatchMsgListener> _Nullable listener);
+
+FOUNDATION_EXPORT void Im_chat_sdkSetContactList(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable contacts);
 
 FOUNDATION_EXPORT void Im_chat_sdkSetConversationBurnDuration(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable conversationID, int32_t duration);
 
