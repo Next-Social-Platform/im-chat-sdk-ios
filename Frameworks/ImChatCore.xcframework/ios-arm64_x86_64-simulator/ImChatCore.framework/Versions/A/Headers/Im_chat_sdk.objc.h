@@ -27,6 +27,7 @@
 - (id<Im_chat_sdk_callbackOnCustomBusinessListener> _Nullable)businessListener;
 // skipped method LoginMgr.Contact with unsupported parameter or return types
 
+- (id<Im_chat_sdk_callbackContactListener> _Nullable)contactListener;
 // skipped method LoginMgr.Context with unsupported parameter or return types
 
 // skipped method LoginMgr.Conversation with unsupported parameter or return types
@@ -62,6 +63,7 @@
 // skipped method LoginMgr.SetAppBackgroundStatus with unsupported parameter or return types
 
 - (void)setBatchMsgListener:(id<Im_chat_sdk_callbackOnBatchMsgListener> _Nullable)batchMsgListener;
+- (void)setContactListener:(id<Im_chat_sdk_callbackContactListener> _Nullable)contactListener;
 - (void)setConversationListener:(id<Im_chat_sdk_callbackOnConversationListener> _Nullable)conversationListener;
 - (void)setCustomBusinessListener:(id<Im_chat_sdk_callbackOnCustomBusinessListener> _Nullable)listener;
 - (void)setFriendListener:(id<Im_chat_sdk_callbackOnFriendshipListener> _Nullable)friendListener;
@@ -360,6 +362,8 @@ FOUNDATION_EXPORT void Im_chat_sdkSetAppBadge(id<Im_chat_sdk_callbackBase> _Null
 FOUNDATION_EXPORT void Im_chat_sdkSetBatchMsgListener(id<Im_chat_sdk_callbackOnBatchMsgListener> _Nullable listener);
 
 FOUNDATION_EXPORT void Im_chat_sdkSetContactList(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable contacts);
+
+FOUNDATION_EXPORT void Im_chat_sdkSetContactListener(id<Im_chat_sdk_callbackContactListener> _Nullable listener);
 
 FOUNDATION_EXPORT void Im_chat_sdkSetConversationBurnDuration(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable conversationID, int32_t duration);
 

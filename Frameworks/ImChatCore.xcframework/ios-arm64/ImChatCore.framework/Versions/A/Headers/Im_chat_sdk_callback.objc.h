@@ -13,6 +13,8 @@
 
 @protocol Im_chat_sdk_callbackBase;
 @class Im_chat_sdk_callbackBase;
+@protocol Im_chat_sdk_callbackContactListener;
+@class Im_chat_sdk_callbackContactListener;
 @protocol Im_chat_sdk_callbackOnAdvancedMsgListener;
 @class Im_chat_sdk_callbackOnAdvancedMsgListener;
 @protocol Im_chat_sdk_callbackOnBatchMsgListener;
@@ -47,6 +49,10 @@
 @protocol Im_chat_sdk_callbackBase <NSObject>
 - (void)onError:(int32_t)errCode errMsg:(NSString* _Nullable)errMsg;
 - (void)onSuccess:(NSString* _Nullable)data;
+@end
+
+@protocol Im_chat_sdk_callbackContactListener <NSObject>
+- (void)onContactListChanged:(NSString* _Nullable)contacts;
 @end
 
 @protocol Im_chat_sdk_callbackOnAdvancedMsgListener <NSObject>
@@ -214,6 +220,8 @@
 
 @class Im_chat_sdk_callbackBase;
 
+@class Im_chat_sdk_callbackContactListener;
+
 @class Im_chat_sdk_callbackOnAdvancedMsgListener;
 
 @class Im_chat_sdk_callbackOnBatchMsgListener;
@@ -251,6 +259,14 @@
 - (nonnull instancetype)initWithRef:(_Nonnull id)ref;
 - (void)onError:(int32_t)errCode errMsg:(NSString* _Nullable)errMsg;
 - (void)onSuccess:(NSString* _Nullable)data;
+@end
+
+@interface Im_chat_sdk_callbackContactListener : NSObject <goSeqRefInterface, Im_chat_sdk_callbackContactListener> {
+}
+@property(strong, readonly) _Nonnull id _ref;
+
+- (nonnull instancetype)initWithRef:(_Nonnull id)ref;
+- (void)onContactListChanged:(NSString* _Nullable)contacts;
 @end
 
 @interface Im_chat_sdk_callbackOnAdvancedMsgListener : NSObject <goSeqRefInterface, Im_chat_sdk_callbackOnAdvancedMsgListener> {
