@@ -50,6 +50,8 @@
 - (id<Im_chat_sdk_callbackOnGroupListener> _Nullable)groupListener;
 // skipped method LoginMgr.ImConfig with unsupported parameter or return types
 
+// skipped method LoginMgr.ImUser with unsupported parameter or return types
+
 // skipped method LoginMgr.InitSDK with unsupported parameter or return types
 
 // skipped method LoginMgr.Login with unsupported parameter or return types
@@ -159,7 +161,7 @@ FOUNDATION_EXPORT NSString* _Nonnull Im_chat_sdkCreateMergerMessage(NSString* _N
 
 FOUNDATION_EXPORT NSString* _Nonnull Im_chat_sdkCreateQuoteMessage(NSString* _Nullable operationID, NSString* _Nullable text, NSString* _Nullable message);
 
-FOUNDATION_EXPORT NSString* _Nonnull Im_chat_sdkCreateReactionMessage(NSString* _Nullable operationID, NSString* _Nullable clientMsgID);
+FOUNDATION_EXPORT NSString* _Nonnull Im_chat_sdkCreateReactionMessage(NSString* _Nullable operationID, NSString* _Nullable clientMsgID, NSString* _Nullable reaction, int32_t status);
 
 FOUNDATION_EXPORT NSString* _Nonnull Im_chat_sdkCreateSoundMessage(NSString* _Nullable operationID, NSString* _Nullable soundPath, int64_t duration);
 
@@ -209,6 +211,8 @@ FOUNDATION_EXPORT void Im_chat_sdkGetAllConversationList(id<Im_chat_sdk_callback
  */
 FOUNDATION_EXPORT void Im_chat_sdkGetAllUserCommands(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, int32_t Type);
 
+FOUNDATION_EXPORT void Im_chat_sdkGetAppConfig(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID);
+
 FOUNDATION_EXPORT NSString* _Nonnull Im_chat_sdkGetAtAllTag(NSString* _Nullable operationID);
 
 FOUNDATION_EXPORT void Im_chat_sdkGetBlackList(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID);
@@ -231,6 +235,8 @@ FOUNDATION_EXPORT void Im_chat_sdkGetFriendApplicationListAsRecipient(id<Im_chat
 FOUNDATION_EXPORT void Im_chat_sdkGetFriendList(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID);
 
 FOUNDATION_EXPORT void Im_chat_sdkGetFriendListPage(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, int32_t offset, int32_t count);
+
+FOUNDATION_EXPORT void Im_chat_sdkGetFullUserInfo(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable userIDs);
 
 FOUNDATION_EXPORT void Im_chat_sdkGetGroupApplicationListAsApplicant(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID);
 
@@ -308,7 +314,7 @@ FOUNDATION_EXPORT void Im_chat_sdkJoinGroup(id<Im_chat_sdk_callbackBase> _Nullab
 
 FOUNDATION_EXPORT void Im_chat_sdkKickGroupMember(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable groupID, NSString* _Nullable reason, NSString* _Nullable userIDList);
 
-FOUNDATION_EXPORT void Im_chat_sdkLogin(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable userID, NSString* _Nullable token);
+FOUNDATION_EXPORT void Im_chat_sdkLogin(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable userID, NSString* _Nullable token, NSString* _Nullable imToken);
 
 FOUNDATION_EXPORT void Im_chat_sdkLogout(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID);
 
@@ -342,6 +348,8 @@ FOUNDATION_EXPORT void Im_chat_sdkRevokeMessage(id<Im_chat_sdk_callbackBase> _Nu
 FOUNDATION_EXPORT void Im_chat_sdkSearchConversation(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable searchParam);
 
 FOUNDATION_EXPORT void Im_chat_sdkSearchFriends(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable searchParam);
+
+FOUNDATION_EXPORT void Im_chat_sdkSearchFullUserInfo(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable keyword, int32_t offset, int32_t limit);
 
 FOUNDATION_EXPORT void Im_chat_sdkSearchGroupMembers(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable searchParam);
 
@@ -426,6 +434,8 @@ FOUNDATION_EXPORT void Im_chat_sdkSetSelfInfoEx(id<Im_chat_sdk_callbackBase> _Nu
 
 FOUNDATION_EXPORT void Im_chat_sdkSetUserListener(id<Im_chat_sdk_callbackOnUserListener> _Nullable listener);
 
+FOUNDATION_EXPORT void Im_chat_sdkSetUserNote(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable userNote);
+
 /**
  * SubscribeUsersStatus Presence status of subscribed users.
  */
@@ -443,6 +453,8 @@ FOUNDATION_EXPORT void Im_chat_sdkUnInitSDK(NSString* _Nullable operationID);
 FOUNDATION_EXPORT void Im_chat_sdkUnsubscribeUsersStatus(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable userIDs);
 
 FOUNDATION_EXPORT void Im_chat_sdkUpdateFcmToken(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable fcmToken, int64_t expireTime);
+
+FOUNDATION_EXPORT void Im_chat_sdkUpdateFullUserInfo(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, NSString* _Nullable userInfo);
 
 /**
  * UpdateMsgSenderInfo updates the message sender's nickname and face URL.
