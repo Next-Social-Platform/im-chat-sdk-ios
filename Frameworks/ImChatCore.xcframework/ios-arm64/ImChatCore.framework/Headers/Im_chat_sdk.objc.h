@@ -221,7 +221,7 @@ FOUNDATION_EXPORT void Im_chat_sdkGetContactList(id<Im_chat_sdk_callbackBase> _N
 
 FOUNDATION_EXPORT NSString* _Nonnull Im_chat_sdkGetConversationIDBySessionType(NSString* _Nullable operationID, NSString* _Nullable sourceID, long sessionType);
 
-FOUNDATION_EXPORT void Im_chat_sdkGetConversationListSplit(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, long offset, long count);
+FOUNDATION_EXPORT void Im_chat_sdkGetConversationListSplit(id<Im_chat_sdk_callbackBase> _Nullable callback, NSString* _Nullable operationID, long offset, long count, long ctype);
 
 /**
  * deprecated
